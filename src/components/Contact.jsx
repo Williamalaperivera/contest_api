@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../content/Context';
 
 export const Contact = () => {
+
+  const {user} = useContext(Context);
+
   return (
     <div>
-    <h1>Bienvenido a contact</h1>
-    <p>Pagina de contacto</p>
-    </div>
+      <h1>Página de Contacto</h1>
+      <p className='text-primary'>Nombre: {user.name}</p>
+      <p className='text-primary'>Teléfono: {user.phone}</p>
+  </div>
   )
 }
